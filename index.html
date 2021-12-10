@@ -1,1 +1,46 @@
-<html><head><title>Map of CivRev</title></head><body>Hello!</body></html>
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Use minimum-scale=1 to enable GPU rasterization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1">
+    <meta name="Description" content="Interactive map of CivRevolution">
+    <title>CCMap: CivClassic Map</title>
+    <meta property="og:type" content="object" />
+    <meta property="og:url" content="https://revmap.github.io/" />
+    <meta property="og:site_name" content="RevMap" />
+    <meta property="og:title" content="RevMap" />
+    <meta property="og:description" content="Interactive map of CivRevolution" />
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/910683593179811930/918610803924566016/civrev.png" />
+    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/910683593179811930/918610803924566016/civrev.png" />
+</head>
+
+<body>
+    <div id="app-root">
+        Loading...
+    </div>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="https://ccmap.github.io/style.css" />
+    <script src="https://ccmap.github.io/js/bundle.js"></script>
+    <script type="text/javascript">
+        var config = {
+            defaultCollectionUrls: [
+                { source: "https://revmap.github.io/data/settlements.json", enabled_presentation: false },
+            ],
+            initialState: {
+                mapConfig: {
+                    borderApothem: 13000,
+                    tilesRoot: 'https://raw.githubusercontent.com/revmap/tiles/master/',
+                    basemaps: {
+                        terrain: { name: 'Terrain', id: 'terrain', bgColor: '#000', isDefault: true },
+                    },
+                }
+            }
+        }
+        window.civMapApi = CivMap.start(config)
+    </script>
+</body>
+
+</html>
